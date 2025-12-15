@@ -3,4 +3,5 @@ Convert.pm
 Makefile.PL
 MANIFEST
 META.yml
+README.md
 t/convert.t
