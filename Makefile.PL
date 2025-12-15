@@ -5,3 +5,12 @@ WriteMakefile(
     'NAME'	=> 'Finance::Currency::Convert',
     'VERSION_FROM' => 'Convert.pm', # finds $VERSION
 );
+
+sub MY::postamble {
+  return <<'END';
+readme:
+	pod2markdown Convert.pm > README.md
+
+dist: readme
+END
+}
