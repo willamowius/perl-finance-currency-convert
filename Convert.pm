@@ -365,7 +365,7 @@ with updateRates.
 
 =head1 AUTHOR
 
-  Jan Willamowius <jan@willamowius.de>, https://www.willamowius.de/perl.html
+  Jan Willamowius <jan@willamowius.de>, L<https://www.willamowius.de/perl.html>
 
 =head1 SEE ALSO
 
