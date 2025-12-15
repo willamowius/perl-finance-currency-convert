@@ -1,152 +1,171 @@
-NAME
-    Finance::Currency::Convert - Convert currencies and fetch their exchange
-    rates (with Finance::Quote)
+# NAME
 
-SYNOPSIS
-       use Finance::Currency::Convert;
-       my $converter = new Finance::Currency::Convert;
+Finance::Currency::Convert -
+Convert currencies and fetch their exchange rates (with Finance::Quote)
 
-       $amount_euro = $converter->convert(100, "DEM", "EUR");
-       $amount_euro = $converter->convertToEUR(100, "DEM");
-       $amount_dem = $converter->convertFromEUR(100, "DEM");
+# SYNOPSIS
 
-       $converter->updateRates("USD");
-       $amount_euro = $converter->convertToEUR(100, "USD");
+    use Finance::Currency::Convert;
+    my $converter = new Finance::Currency::Convert;
 
-       $converter->setRatesFile(".rates");
-       $converter->readRatesFile();
-       $converter->writeRatesFile();
+    $amount_euro = $converter->convert(100, "DEM", "EUR");
+    $amount_euro = $converter->convertToEUR(100, "DEM");
+    $amount_dem = $converter->convertFromEUR(100, "DEM");
 
-DESCRIPTION
-    This module converts currencies. It has built in the fixed exchange
-    rates for all Euro currencies (as of November 2000). If you wish to use
-    other / more currencies, you can automatically fetch their exchange
-    rates from the internet and (optionally) store them in a file for later
-    reference.
+    $converter->updateRates("USD");
+    $amount_euro = $converter->convertToEUR(100, "USD");
 
-    Use this module if you have large volumes of currency data to convert.
-    Using the exchange rates from memory makes it a lot faster than using
-    Finance::Quote directly and will save you the duty of storing the
-    exchange rates yourself.
+    $converter->setRatesFile(".rates");
+    $converter->readRatesFile();
+    $converter->writeRatesFile();
 
-  CURRENCY SYMBOLS
-    Finance::Currency::Convert uses the three character ISO currency codes
-    used by Finance::Quote. Here is a list of currency codes.
+# DESCRIPTION
 
-    Currencies with built-in rates (complete):
+This module converts currencies. It has built in the fixed exchange
+rates for all Euro currencies (as of November 2000). If you wish to use other / more
+currencies, you can automatically fetch their exchange rates from
+the internet and (optionally) store them in a file for later reference.
 
-            EUR             Euro
-            ATS             Austrian Schilling
-            BEF             Belgiam Franc
-            DEM             German Mark
-            ESP             Spanish Peseta
-            FIM             Finnish Mark
-            FRF             French Franc
-            GRD             Greek Drachma
-            IEP             Irish Punt
-            ITL             Italian Lira
-            LUF             Luxembourg Franc
-            NLG             Dutch Guilder
-            PTE             Portuguese Escudo
-            CYP             Cyprus Pound
-            MTL             Maltese Lira
-            SIT             Slovenian Tolars
-            SKK             Swedish Krona
-            EEK             Estonian Koon
-            LTL             Lithuanian Litas
-            LVL             Latvian Lats
-            HRK             Croatian Kuna
-            BGN             Bulgarian Lev
+Use this module if you have large volumes of currency data to convert.
+Using the exchange rates from memory makes it a lot faster than
+using Finance::Quote directly and will save you the duty of storing
+the exchange rates yourself.
 
-    Other currencies (incomplete):
+## CURRENCY SYMBOLS
 
-            AUD             Australian Dollar
-            CHF             Swiss Franc
-            HKD             Hong Kong Dollar
-            JPY             Japanese Yen
-            USD             US Dollar
+Finance::Currency::Convert uses the three character ISO currency codes
+used by  Finance::Quote.
+Here is a list of currency codes.
 
-AVAILABLE METHODS
-  NEW
-       my $converter = new Finance::Currency::Convert;
+Currencies with built-in rates (complete):
 
-    The newly created conversion object will by default only know how to
-    convert Euro currencies. To "teach" it more currencies use updateRate or
-    updateRates.
+        EUR             Euro
+        ATS             Austrian Schilling
+        BEF             Belgiam Franc
+        DEM             German Mark
+        ESP             Spanish Peseta
+        FIM             Finnish Mark
+        FRF             French Franc
+        GRD             Greek Drachma
+        IEP             Irish Punt
+        ITL             Italian Lira
+        LUF             Luxembourg Franc
+        NLG             Dutch Guilder
+        PTE             Portuguese Escudo
+        CYP             Cyprus Pound
+        MTL             Maltese Lira
+        SIT             Slovenian Tolars
+        SKK             Swedish Krona
+        EEK             Estonian Koon
+        LTL             Lithuanian Litas
+        LVL             Latvian Lats
+        HRK             Croatian Kuna
+        BGN             Bulgarian Lev
 
-  CONVERT
-       $amount_euro = $converter->convert(100, "DEM", "EUR");
+Other currencies (incomplete):
 
-    This will convert 100 German Marks into the equivalent amount Euro.
+        AUD             Australian Dollar
+        CHF             Swiss Franc
+        HKD             Hong Kong Dollar
+        JPY             Japanese Yen
+        USD             US Dollar
 
-  CONVERTTOEURO
-       $amount_euro = $converter->convertToEUR(100, "DEM");
+# AVAILABLE METHODS
 
-    This will convert 100 German Marks into the equivalent amount Euro. This
-    function is simply shorthand for calling convert directly with "EUR" als
-    the second (target) currency.
+## NEW
 
-  CONVERTFROMEURO
-       $amount_dem = $converter->convertFromEUR(100, "DEM");
+    my $converter = new Finance::Currency::Convert;
 
-    This will convert 100 Euro into the equivalent amount German Marks. This
-    function is simply shorthand for calling convert directly with "EUR" als
-    the first (source) currency.
+The newly created conversion object will by default only know how to
+convert Euro currencies. To "teach" it more currencies use updateRate
+or updateRates.
 
-  UPDATERATES
-       $converter->updateRates("USD");
-       $converter->updateRates("EUR", "DEM", "USD");
+## CONVERT
 
-    This will fetch the exchange rates for one or more currencies using
-    Finance::Quote and update the exchange rates in memory. This method will
-    fetch _all_ combinations of exchange rates between the named currencies
-    and the ones already in memory. This may result in a large number of
-    requests to Finance::Quote. To avoid network overhead you can store the
-    retrieved rates with setRatesFile() / writeRatesFile() once you have
-    retrieved them and load them again with setRatesFile().
+    $amount_euro = $converter->convert(100, "DEM", "EUR");
 
-    To update a single exchange rate use updateRate.
+This will convert 100 German Marks into the equivalent
+amount Euro.
 
-  UPDATERATE
-       $converter->updateRate("EUR, "USD");
+## CONVERTTOEURO
 
-    This will fetch a single exchange rate using Finance::Quote and update
-    the exchange rates in memory.
+    $amount_euro = $converter->convertToEUR(100, "DEM");
 
-  SETUSERAGENT
-            $converter->setUserAgent("MyCurrencyAgent 1.0");
+This will convert 100 German Marks into the equivalent amount Euro.
+This function is simply shorthand for calling convert directly with
+"EUR" als the second (target) currency.
 
-    Set the user agent string to be used by Finance::Quote, optional.
+## CONVERTFROMEURO
 
-  SETRATE
-            $converter->setRate("EUR", "USD", 99.99);
+    $amount_dem = $converter->convertFromEUR(100, "DEM");
 
-    Set one exchange rate. Used internally by updateRates, but may be of use
-    if you have to add a rate manually.
+This will convert 100 Euro into the equivalent amount German Marks.
+This function is simply shorthand for calling convert directly with
+"EUR" als the first (source) currency.
 
-  SETRATESFILE
-       $converter->setRatesFile(".rates");
+## UPDATERATES
 
-    Name the file where exchange rates are stored.
+    $converter->updateRates("USD");
+    $converter->updateRates("EUR", "DEM", "USD");
 
-  READRATESFILE
-       $converter->readRatesFile();
+This will fetch the exchange rates for one or more currencies using
+Finance::Quote and update the exchange rates in memory.
+This method will fetch \_all\_ combinations of exchange rates between
+the named currencies and the ones already in memory.
+This may result in a large number of requests to Finance::Quote.
+To avoid network overhead you can store the retrieved rates with
+setRatesFile() / writeRatesFile() once you have retrieved them
+and load them again with setRatesFile().
 
-    Read the rates stored in the rates file, overwriting previous values.
+To update a single exchange rate use updateRate.
 
-  WRITERATESFILE
-       $converter->writeRatesFile();
+## UPDATERATE
 
-    Call this function to save table with exchange rates from memory to the
-    file named by setRatesFile() eg. after fetching new rates with
-    updateRates.
+    $converter->updateRate("EUR, "USD");
 
-AUTHOR
-      Jan Willamowius <jan@willamowius.de>, https://www.willamowius.de/perl.html
+This will fetch a single exchange rate using Finance::Quote and
+update the exchange rates in memory.
 
-SEE ALSO
-    Finance::Quote
+## SETUSERAGENT
 
-    This module is only needed for fetching exchange rates. There is no need
-    to install it when only Euro currencies are used.
+        $converter->setUserAgent("MyCurrencyAgent 1.0");
 
+Set the user agent string to be used by Finance::Quote, optional.
+
+## SETRATE
+
+        $converter->setRate("EUR", "USD", 99.99);
+
+Set one exchange rate. Used internally by updateRates,
+but may be of use if you have to add a rate manually.
+
+## SETRATESFILE
+
+    $converter->setRatesFile(".rates");
+
+Name the file where exchange rates are stored.
+
+## READRATESFILE
+
+    $converter->readRatesFile();
+
+Read the rates stored in the rates file, overwriting previous values.
+
+## WRITERATESFILE
+
+    $converter->writeRatesFile();
+
+Call this function to save table with exchange rates from memory
+to the file named by setRatesFile() eg. after fetching new rates
+with updateRates.
+
+# AUTHOR
+
+    Jan Willamowius <jan@willamowius.de>, https://www.willamowius.de/perl.html
+
+# SEE ALSO
+
+Finance::Quote
+
+This module is only needed for fetching exchange rates.
+There is no need to install it when only Euro currencies are used.
