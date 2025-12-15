@@ -161,7 +161,7 @@ with updateRates.
 
 # AUTHOR
 
-    Jan Willamowius <jan@willamowius.de>, https://www.willamowius.de/perl.html
+    Jan Willamowius <jan@willamowius.de>, L<https://www.willamowius.de/perl.html>
 
 # SEE ALSO
 
