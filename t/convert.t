@@ -64,9 +64,8 @@ if ($@) {
 	ok($amount18 < 1, 'sanity check on AUD rate');
 }
 
-my $fn = 'rates.txt';
+my $fn = '/tmp/rates.txt';
 $converter->setRatesFile($fn);
-$converter->readRatesFile();
 is($converter->convertToEUR(1, "EUR"), 1, "make sure builtin rates still exist - EUR");
 is($converter->convertToEUR(1, "DEM"), 0.511291881196, "make sure builtin rates still exist - DEM");
 ok($converter->convertToEUR(1, "USD") > 0.5 , "make sure previously set rates still exist - USD");

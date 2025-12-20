@@ -22,7 +22,7 @@ require AutoLoader;
 @EXPORT = qw(
 	
 );
-$VERSION = '2.06';
+$VERSION = '2.07';
 
 my %EuroRates = (
          BEF => {EUR=>0.0247899055505,   BEF => 1},
@@ -58,7 +58,7 @@ sub new() {
 	$self->{RatesFile} = $ratesFile;
 	$self->{UserAgent} = "Finance::Currency::Convert $VERSION";
 	bless($self, $class);
-	$self->readRatesFile() if (defined($ratesFile));
+	$self->readRatesFile() if (defined($ratesFile) && -e $self->{RatesFile});
 	return $self;
 }
 
@@ -73,7 +73,7 @@ sub setRate() {
 sub setRatesFile() {
 	my $self = shift;
 	$self->{RatesFile} = shift;
-	$self->readRatesFile();
+	$self->readRatesFile() if (-e $self->{RatesFile});
 }
 
 sub readRatesFile() {

@@ -60,3 +60,6 @@ Revision history for Perl extension Finance::Currency::Convert.
 2.06  Mon Dec 20 18:30:00 CEST 2025
 	- set dummy rates when testing without Finance::Quote
 
+2.07  Mon Dec 20 19:30:00 CEST 2025
+	- fix warning when rates file doesn't exist, yet
+
