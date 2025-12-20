@@ -1,7 +1,6 @@
 # NAME
 
-Finance::Currency::Convert -
-Convert currencies and fetch their exchange rates (with Finance::Quote)
+Finance::Currency::Convert - Convert currencies and fetch their exchange rates (with Finance::Quote)
 
 # SYNOPSIS
 
@@ -161,7 +160,15 @@ with updateRates.
 
 # AUTHOR
 
-    Jan Willamowius <jan@willamowius.de>, L<https://www.willamowius.de/perl.html>
+    Jan Willamowius <jan@willamowius.de>, https://www.willamowius.de/perl.html
+
+# COPYRIGHT AND LICENSE
+
+Copyright 2001 - 2025 by Jan Willamowius
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself, either Perl version 5.30.0 or,
+at your option, any later version of Perl 5 you may have available.
 
 # SEE ALSO
 

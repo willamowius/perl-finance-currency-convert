@@ -366,6 +366,16 @@ with updateRates.
 
   Jan Willamowius <jan@willamowius.de>, https://www.willamowius.de/perl.html
 
+=head1 COPYRIGHT AND LICENSE
+
+Copyright 2001 - 2025 by Jan Willamowius
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself, either Perl version 5.30.0 or,
+at your option, any later version of Perl 5 you may have available.
+
+=cut
+
 =head1 SEE ALSO
 
 Finance::Quote
