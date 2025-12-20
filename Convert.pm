@@ -22,7 +22,7 @@ require AutoLoader;
 @EXPORT = qw(
 	
 );
-$VERSION = '2.05';
+$VERSION = '2.06';
 
 my %EuroRates = (
          BEF => {EUR=>0.0247899055505,   BEF => 1},
@@ -226,7 +226,7 @@ Finance::Currency::Convert - Convert currencies and fetch their exchange rates
 =head1 DESCRIPTION
 
 This module converts currencies. It has built in the fixed exchange
-rates for all Euro currencies (as of November 2000). If you wish to use other / more
+rates for all Euro currencies (as of December 2025). If you wish to use other / more
 currencies, you can automatically fetch their exchange rates from
 the internet and (optionally) store them in a file for later reference.
 

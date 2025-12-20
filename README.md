@@ -21,7 +21,7 @@ Finance::Currency::Convert - Convert currencies and fetch their exchange rates
 # DESCRIPTION
 
 This module converts currencies. It has built in the fixed exchange
-rates for all Euro currencies (as of November 2000). If you wish to use other / more
+rates for all Euro currencies (as of December 2025). If you wish to use other / more
 currencies, you can automatically fetch their exchange rates from
 the internet and (optionally) store them in a file for later reference.
 

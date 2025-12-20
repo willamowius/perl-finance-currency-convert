@@ -49,7 +49,11 @@ ok(abs($amount16 - 789.74) <= $e, 'convert HRK to self');
 
 eval "use Finance::Quote";
 if ($@) {
-	# skip online update test
+	# skip online update test, set dummy rates for testing
+	$converter->setRate("USD", "EUR", 0.85337);
+	$converter->setRate("EUR", "USD", 1.17165);
+	$converter->setRate("AUD", "EUR", 0.56414);
+	$converter->setRate("EUR", "AUD", 1.77212);
 } else {
 	$converter->updateRates("AUD", "USD");
 	my $amount17 = $converter->convertFromEUR(1, "USD");
