@@ -54,3 +54,6 @@ Revision history for Perl extension Finance::Currency::Convert.
 	- add 2 tests
 	- improve module meta data
 
+2.05  Mon Dec 20 12:30:00 CEST 2025
+	- fix tests when Finance::Quote is not available
+

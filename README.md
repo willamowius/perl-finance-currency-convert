@@ -1,6 +1,6 @@
 # NAME
 
-Finance::Currency::Convert - Convert currencies and fetch their exchange rates (with Finance::Quote)
+Finance::Currency::Convert - Convert currencies and fetch their exchange rates
 
 # SYNOPSIS
 
