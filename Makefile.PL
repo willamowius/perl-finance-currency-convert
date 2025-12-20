@@ -8,6 +8,7 @@ WriteMakefile(
 	'ABSTRACT_FROM' => 'Convert.pm', # retrieve abstract from module
 	'AUTHOR' => 'Jan Willamowius <jan@willamowius.de>',
 	'LICENSE' => 'perl',
+	'MIN_PERL_VERSION' => '5.5.5',
     'META_MERGE' => {
         'meta-spec' => { 'version' => 2 },
          'resources' => {
