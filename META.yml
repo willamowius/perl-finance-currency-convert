@@ -1,5 +1,4 @@
 name:               'Finance::Currency::Convert - Convert currencies and fetch their exchange rates'
-version:            2.04
 abstract:           'Convert currencies and fetch their exchange rates'
 author:
     - Jan Willamowius <jan@willamowius.de>
@@ -10,5 +9,3 @@ recommends:
 resources:
   license: https://dev.perl.org/licenses/
   homepage: https://www.willamowius.de/perl.html
-  repository: https://github.com/willamowius/perl-finance-currency-convert
-  bugtracker: https://github.com/willamowius/perl-finance-currency-convert/issues
