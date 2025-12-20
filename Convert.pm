@@ -21,7 +21,7 @@ require AutoLoader;
 @EXPORT = qw(
 	
 );
-$VERSION = '2.03';
+$VERSION = '2.04';
 
 my %EuroRates = (
          BEF => {EUR=>0.0247899055505,   BEF => 1},
@@ -202,8 +202,7 @@ __END__
 
 =head1 NAME
 
-Finance::Currency::Convert -
-Convert currencies and fetch their exchange rates (with Finance::Quote)
+Finance::Currency::Convert - Convert currencies and fetch their exchange rates (with Finance::Quote)
 
 =head1 SYNOPSIS
 
@@ -365,7 +364,7 @@ with updateRates.
 
 =head1 AUTHOR
 
-  Jan Willamowius <jan@willamowius.de>, L<https://www.willamowius.de/perl.html>
+  Jan Willamowius <jan@willamowius.de>, https://www.willamowius.de/perl.html
 
 =head1 SEE ALSO
 

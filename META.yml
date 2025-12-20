@@ -1,5 +1,5 @@
 name:               'Finance::Currency::Convert - Convert currencies and fetch their exchange rates'
-version:            2.03
+version:            2.04
 abstract:           'Convert currencies and fetch their exchange rates'
 author:
     - Jan Willamowius <jan@willamowius.de>
