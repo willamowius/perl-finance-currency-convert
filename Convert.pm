@@ -9,6 +9,7 @@
 package Finance::Currency::Convert;
 
 use strict;
+use warnings;
 use vars qw($VERSION @ISA @EXPORT @EXPORT_OK);
 
 require Exporter;
