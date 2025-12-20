@@ -105,6 +105,7 @@ sub writeRatesFile() {
 		print RATES "$sourcerate|";
 		foreach my $targetrate (sort keys %{ $self->{CurrencyRates}{$sourcerate}}) {
 			if (exists($self->{CurrencyRates}{$sourcerate}{$targetrate})
+				&& defined($self->{CurrencyRates}{$sourcerate}{$targetrate})
 				&& $self->{CurrencyRates}{$sourcerate}{$targetrate} ne '') {
 				print RATES "$targetrate=" . $self->{CurrencyRates}{$sourcerate}{$targetrate} . ":";
 			}
