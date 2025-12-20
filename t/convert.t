@@ -65,7 +65,7 @@ if ($@) {
 }
 
 my $fn = '/tmp/rates.txt';
-system("rm -f $fn");
+unlink($fn);
 $converter->setRatesFile($fn);
 is($converter->convertToEUR(1, "EUR"), 1, "make sure builtin rates still exist - EUR");
 is($converter->convertToEUR(1, "DEM"), 0.511291881196, "make sure builtin rates still exist - DEM");
@@ -74,5 +74,5 @@ ok($converter->convertFromEUR(1, "AUD") > 0.5 , "make sure previously set rates 
 $converter->writeRatesFile();
 ok(-f $fn, 'writeRatesFile - file exists');
 ok(-s $fn > 0, 'writeRatesFile - file is non zero');
-system("rm -f $fn");
+unlink($fn) or die("Can't delete $fn");
 
