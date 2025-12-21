@@ -70,3 +70,6 @@ Revision history for Perl extension Finance::Currency::Convert.
 	- fix warnings for Perl 5.40
 	- add SECURITY.md
 
+2.10  Mon Dec 22 01:00:00 CEST 2025
+	- only perform online tests with Finance::Quoute if internet is available
+
