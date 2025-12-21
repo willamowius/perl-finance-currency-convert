@@ -78,7 +78,7 @@ sub setRatesFile() {
 
 sub readRatesFile() {
 	my $self = shift;
-	if (!defined $self->{RatesFile} || !(-r $self->{RatesFile}) || !(-s $self->{RatesFile}) > 0) {
+	if (!defined $self->{RatesFile} || !(-r $self->{RatesFile}) || !((-s $self->{RatesFile}) > 0)) {
 		warn("Can't read $self->{RatesFile}\n");
 		return;
 	}
