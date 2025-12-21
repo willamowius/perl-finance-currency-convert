@@ -58,7 +58,7 @@ sub new() {
 	$self->{RatesFile} = $ratesFile;
 	$self->{UserAgent} = "Finance::Currency::Convert $VERSION";
 	bless($self, $class);
-	$self->readRatesFile() if (defined($ratesFile) && -e $self->{RatesFile});
+	$self->readRatesFile() if (defined($ratesFile) && (-e $self->{RatesFile}));
 	return $self;
 }
 
@@ -78,7 +78,7 @@ sub setRatesFile() {
 
 sub readRatesFile() {
 	my $self = shift;
-	if (!defined $self->{RatesFile} || !-r $self->{RatesFile} || !-s $self->{RatesFile} > 0) {
+	if (!defined $self->{RatesFile} || !(-r $self->{RatesFile}) || !(-s $self->{RatesFile}) > 0) {
 		warn("Can't read $self->{RatesFile}\n");
 		return;
 	}
