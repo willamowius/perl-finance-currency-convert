@@ -63,3 +63,10 @@ Revision history for Perl extension Finance::Currency::Convert.
 2.07  Mon Dec 20 19:30:00 CEST 2025
 	- fix warning when rates file doesn't exist, yet
 
+2.08  Mon Dec 20 20:30:00 CEST 2025
+	- fix warnings for Perl 5.43
+
+2.09  Mon Dec 21 13:00:00 CEST 2025
+	- fix warnings for Perl 5.40
+	- add SECURITY.md
+

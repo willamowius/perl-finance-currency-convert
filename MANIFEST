@@ -4,4 +4,5 @@ Makefile.PL
 MANIFEST
 META.yml
 README.md
+SECURITY.md
 t/convert.t
