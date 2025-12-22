@@ -73,3 +73,6 @@ Revision history for Perl extension Finance::Currency::Convert.
 2.10  Mon Dec 22 01:00:00 CEST 2025
 	- only perform online tests with Finance::Quoute if internet is available
 
+2.11  Mon Dec 22 09:30:00 CEST 2025
+	- test with Finance::Quoute only if actually installed
+
