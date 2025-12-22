@@ -52,7 +52,6 @@ $converter->setRate("USD", "EUR", 0.85337);
 $converter->setRate("EUR", "USD", 1.17165);
 $converter->setRate("AUD", "EUR", 0.56414);
 $converter->setRate("EUR", "AUD", 1.77212);
-$converter->updateRates("AUD", "USD");
 my $amount17 = $converter->convertFromEUR(1, "USD");
 ok($amount17 > 0.5, 'sanity check on USD rate');
 ok($amount17 < 2, 'sanity check on USD rate');
