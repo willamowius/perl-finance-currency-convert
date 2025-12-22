@@ -47,8 +47,12 @@ ok(abs($amount15 - 789.74) <= $e, 'convert LVL to self');
 my $amount16 = $converter->convertFromEUR($converter->convertToEUR(789.74, "HRK") , "HRK");
 ok(abs($amount16 - 789.74) <= $e, 'convert HRK to self');
 
+ok($converter->rateAvailable("DEM", "EUR"), 'rateAvailable - builtin rate');
+ok(!$converter->rateAvailable("USD", "EUR"), 'rateAvailable - other rate');
+
 # set dummy rates for testing
 $converter->setRate("USD", "EUR", 0.85337);
+ok($converter->rateAvailable("USD", "EUR"), 'rateAvailable - other rate');
 $converter->setRate("EUR", "USD", 1.17165);
 $converter->setRate("AUD", "EUR", 0.56414);
 $converter->setRate("EUR", "AUD", 1.77212);
